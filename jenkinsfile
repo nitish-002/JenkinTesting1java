@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                git url: 'https://github.com/Aditya-269/devopstesting.git', branch: 'main'
+                git url: 'https://github.com/nitish-002/JenkinTesting1java.git', branch: 'main'
                 echo 'checkout completed'
                 
             }
