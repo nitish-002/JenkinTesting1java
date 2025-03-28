@@ -16,7 +16,7 @@ pipeline{
         }
         stage('Run JAR'){
             steps{
-                def output =sh=(script: 'java -jar /var/lib/jenkins/workspace/demo/target/simple-java-project-1.0-SNAPSHOT.jar', returnStdout:true).trim()
+                def output =sh(script: 'java -jar /var/lib/jenkins/workspace/demo/target/simple-java-project-1.0-SNAPSHOT.jar', returnStdout:true).trim()
 
                 echo "Output from jar : ${output}"
             }
