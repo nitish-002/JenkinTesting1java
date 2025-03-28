@@ -1,26 +1,17 @@
 pipeline{
     agent any
+    tools{
+        maven 'maven'
+    }
     stages{
-        stage('checkout'){
+        stage('Build'){
             steps{
-                git url: 'https://github.com/nitish-002/JenkinTesting1java.git', branch: 'main'
-                echo 'checkout completed'
-                
+                sh 'mvn clean package'
             }
         }
-        stage('build'){
+        stage('Test'){
             steps{
-                echo 'build completed'
-            }
-        }
-         stage('test'){
-            steps{
-                echo 'test completed'
-            }
-        }
-         stage('deploy'){
-            steps{
-                echo 'deploy completed'
+                sh 'mvn test'
             }
         }
     }
